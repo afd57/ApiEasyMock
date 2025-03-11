@@ -8,7 +8,6 @@ import reportWebVitals from './reportWebVitals2';
 import reportWebVitals from './reportWebVitals3';
 import reportWebVitals from './reportWebVitals10';
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 function tick() {
