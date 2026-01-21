@@ -48,3 +48,23 @@ The following are the articles used in our conversation. While the direct URL wa
 20. **Server-Driven UI framework on the Web: Examples, Benefits & Use Cases** – *BCMS* [407–443]
 21. **Server Driven UI: Building Flexible Cross-Platform Applications** – *Complete Guide* [366–394]
 22. **Bug: Seeking Clarification on the Design Pattern for Frontend Rendering** – *GitHub Issue #2420* [112–123]
+
+
+
+
+graph TD
+    User[User] -->|1. Intent: 'Show high priority tasks'| Agent[AI Agent Backend]
+    
+    subgraph "Backend (Reasoning)"
+    Agent -->|2. Fetch Data| Database[(CRM Database)]
+    Database -->|3. Return Data| Agent
+    Agent -->|4. Generate UI Schema| JSON[Declarative JSON Payload]
+    end
+    
+    JSON -->|5. Stream via AG-UI Protocol| Client[Frontend Client]
+    
+    subgraph "Frontend (Rendering)"
+    Client -->|6. Parse JSON| Mapper[Component Mapper/Registry]
+    Mapper -->|7. Look up 'type' in Registry| ComponentLib[Native Component Library]
+    ComponentLib -->|8. Render Native UI| UI[Final Native Interface]
+    end
